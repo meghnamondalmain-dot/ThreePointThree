@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryChef | Warm & Healthy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="slideshow-container">
+
+<nav class="top-nav">
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="logo">PantryChef</div>
+</nav>
+
+<div id="ingredientMenu" class="ingredient-menu">
+    <div class="menu-header">
+        <h3>Common Ingredients</h3>
+        <span class="close-menu">&times;</span>
+    </div>
+    <div class="menu-categories">
+        <div class="category">
+            <h4>Proteins</h4>
+            <button class="ing-opt" data-ing="chicken">Chicken</button>
+            <button class="ing-opt" data-ing="eggs">Eggs</button>
+            <button class="ing-opt" data-ing="chickpeas">Chickpeas</button>
+              <button class="ing-opt" data-ing="paneer">Panner</button>
+            <button class="ing-opt" data-ing="pulse">Pulse</button>
+
+        </div>
+        <div class="category">
+            <h4>Vegetables</h4>
+            <button class="ing-opt" data-ing="tomato">Tomato</button>
+            <button class="ing-opt" data-ing="spinach">Spinach</button>
+            <button class="ing-opt" data-ing="onion">Onion</button>
+            <button class="ing-opt" data-ing="capsicum">Capsicum</button>
+            <button class="ing-opt" data-ing="cucumber">Cucumber</button>
+            <button class="ing-opt" data-ing="lemon">Lemon</button>
+             <button class="ing-opt" data-ing="basil">Basil</button>
+             <button class="ing-opt" data-ing="coriander">Coriander</button>
+             <button class="ing-opt" data-ing="mint">Mint</button>
+
+
+        </div>
+        <div class="category">
+            <h4>Pantry</h4>
+            <button class="ing-opt" data-ing="pasta">Pasta</button>
+            <button class="ing-opt" data-ing="rice">Rice</button>
+            <button class="ing-opt" data-ing="honey">Honey</button>
+            <button class="ing-opt" data-ing="curd">Curd</button>
+            <button class="ing-opt" data-ing="coconut milk">Coconut milk</button>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--not here-->
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1000">
+            <div class="text">Hearty Warm Meals</div>
+         
+    <div class="logo">PantryChef</div>
+</nav>
+
+<div id="ingredientMenu" class="ingredient-menu">
+    <div class="menu-header">
+        <h3>Common Ingredients</h3>
+        <span class="close-menu">&times;</span>
+    </div>
+    
+</div>   
+        </div>
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000">
+            <div class="text">Fresh & Healthy Choices</div>
+        </div>
+    </section>
+
+    <main>
+        <div class="pantry-box">
+            <h2 style="color: #8e44ad;">Golden Pantry</h2>
+            <p>Enter ingredients you have at home:</p>
+            <div class="search-box">
+                <input type="text" id="ingredientInput" placeholder="e.g. Tomato, Pasta, Spinach...">
+                <button id="addBtn">Add</button>
+            </div>
+            <div id="pantryList" class="pantry-tags"></div>
+            <div class="action-buttons">
+                <button id="findRecipesBtn" class="primary-btn">Find Recipes</button>
+                <button id="clearBtn" class="secondary-btn">Clear Pantry</button>
+            </div>
+        </div>
+
+        <section id="recipeResults" class="recipe-grid"></section>
+    </main>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
