@@ -68,49 +68,27 @@ document.getElementById('getRecipes').addEventListener('click', () => {
   setTimeout(() => {
     recipesBox.innerHTML = '';
 
-    const maxComboSize = Math.max(1, parseInt(document.getElementById('maxComboSize').value) || 1);
-    const maxRecipes = Math.max(1, parseInt(document.getElementById('maxRecipes').value) || 6);
-
-    function getCombinations(arr, k) {
-      const res = [];
-      function backtrack(start, comb) {
-        if (comb.length === k) {
-          res.push([...comb]);
-          return;
-        }
-        for (let i = start; i < arr.length; i++) {
-          comb.push(arr[i]);
-          backtrack(i + 1, comb);
-          comb.pop();
-        }
+    const recipes = [
+      {
+        name: 'Quick Stir Fry',
+        steps: `Stir fry ${ingredients.join(', ')} with oil and spices.`
+      },
+      {
+        name: 'Simple Curry',
+        steps: `Slow cook ${ingredients.join(', ')} with onions and masala.`
+      },
+      {
+        name: 'Healthy Bowl',
+        steps: `Boil or sauté ${ingredients.join(', ')} and serve with light seasoning.`
       }
-      backtrack(0, []);
-      return res;
-    }
+    ];
 
-    // build combinations of sizes 1..maxComboSize
-    const combos = [];
-    const upper = Math.min(maxComboSize, ingredients.length);
-    for (let k = 1; k <= upper; k++) {
-      combos.push(...getCombinations(ingredients, k));
-    }
-
-    if (!combos.length) {
-      recipesBox.innerHTML = '<div class="recipe">Not enough ingredients to make recipes.</div>';
-      return;
-    }
-
-    // limit number of recipes
-    const limited = combos.slice(0, maxRecipes);
-
-    limited.forEach((combo, idx) => {
-      const name = `${combo.join(' & ')} ${idx % 2 === 0 ? 'Delight' : 'Special'}`;
-      const steps = `Use ${combo.join(', ')}${ingredients.length > combo.length ? ' with optional others' : ''}. Cook to taste.`;
-
+    recipes.forEach(r => {
       const div = document.createElement('div');
       div.className = 'recipe';
-      div.innerHTML = `<strong>${name}</strong><br>${steps}`;
+      div.innerHTML = `<strong>${r.name}</strong><br>${r.steps}`;
       recipesBox.appendChild(div);
     });
   }, 1200);
 });
+
